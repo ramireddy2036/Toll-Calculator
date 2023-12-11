@@ -1,0 +1,7 @@
+import React from 'react';
+
+const TollResult = ({ toll }) => {
+  return <p>Toll: ${toll}</p>;
+};
+
+export default TollResult;

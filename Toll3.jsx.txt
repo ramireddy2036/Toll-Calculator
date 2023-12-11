@@ -1,0 +1,23 @@
+import React, { useState } from 'react';
+import DistanceForm from './DistanceForm';
+import TollResult from './TollResult';
+
+const App = () => {
+  const [toll, setToll] = useState(null);
+
+  const calculateToll = (distance) => {
+    // Simple toll calculation logic (e.g., $0.10 per mile)
+    const tollAmount = parseFloat(distance) * 0.1;
+    setToll(tollAmount.toFixed(2));
+  };
+
+  return (
+    <div>
+      <h1>Toll Calculator</h1>
+      <DistanceForm calculateToll={calculateToll} />
+      {toll !== null && <TollResult toll={toll} />}
+    </div>
+  );
+};
+
+export default App;
